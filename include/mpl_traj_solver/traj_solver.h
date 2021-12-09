@@ -52,7 +52,8 @@ class TrajSolver {
 
   /// Set Waypoint array from path, overwrite global vars, in this mode, the
   /// intermediate Waypoint are with `Control::VEL`
-  void setPath(const vec_Vecf<Dim>& path) {
+  void setPath(const vec_Vecf<Dim>& path, const Vecf<Dim>& startingVelocity = Vecf<Dim>::Zero(),
+              const Vecf<Dim>& endVelocity = Vecf<Dim>::Zero()) {
     path_ = path;
 
     waypoints_.resize(path_.size());
@@ -64,9 +65,12 @@ class TrajSolver {
       waypoints_[i].yaw = 0;
       waypoints_[i].control = Control::VEL;
     }
-
+    
+    waypoints_.front().vel = startingVelocity;
     waypoints_.front().control = control_;
+    waypoints_.back().vel = endVelocity;
     waypoints_.back().control = control_;
+    
   }
 
   /// Solve for trajectory
