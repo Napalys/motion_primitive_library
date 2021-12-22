@@ -86,7 +86,7 @@ int main(int argc, char** argv) {
 
   if (valid) {
     // Draw trajectory
-    Trajectory2D traj = planner->getTraj();
+    MPL::Trajectory2D traj = planner->getTraj();
     opencv_drawing.drawTraj(traj, red, 2);
     // Draw yaw
     vec_E<vec_Vec2f> trias;

@@ -41,7 +41,7 @@ class OpenCVDrawing {
   }
 
   /// Draw trajectory, sample n points
-  void drawTraj(const Trajectory2D& traj, cv::Scalar color, int line_width = 1,
+  void drawTraj(const MPL::Trajectory2D& traj, cv::Scalar color, int line_width = 1,
                 int num = 200) {
     const auto ws = traj.sample(num);
     for (size_t i = 0; i < ws.size() - 1; i++) {

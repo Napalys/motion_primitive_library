@@ -69,7 +69,7 @@ int main(int argc, char **argv) {
   printf("MP Planner prior expanded states: %zu\n",
          planner->getCloseSet().size());
 
-  Trajectory2D prior_traj = planner->getTraj();
+  MPL::Trajectory2D prior_traj = planner->getTraj();
   printf("Total time T: %f\n", prior_traj.getTotalTime());
   printf("Total J:  J(VEL) = %f, J(ACC) = %f, J(JRK) = %f, J(SNP) = %f\n",
          prior_traj.J(Control::VEL), prior_traj.J(Control::ACC),

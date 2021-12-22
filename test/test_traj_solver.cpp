@@ -26,7 +26,7 @@ int main(int argc, char **argv) {
 
   // Min Vel Traj
   {
-    TrajSolver2D traj_solver(Control::VEL);
+    MPL::TrajSolver2D traj_solver(Control::VEL);
     traj_solver.setPath(path);
     traj_solver.setV(1);  // set velocity for time allocation
     opencv_drawing.drawTraj(traj_solver.solve(), red, 2);
@@ -35,7 +35,7 @@ int main(int argc, char **argv) {
   }
   // Min Acc Traj
   {
-    TrajSolver2D traj_solver(Control::ACC);
+    MPL::TrajSolver2D traj_solver(Control::ACC);
     traj_solver.setPath(path);
     traj_solver.setV(1);  // set velocity for time allocation
     opencv_drawing.drawTraj(traj_solver.solve(), green, 2);
@@ -44,7 +44,7 @@ int main(int argc, char **argv) {
   }
   // Min Jrk Traj
   {
-    TrajSolver2D traj_solver(Control::JRK);
+    MPL::TrajSolver2D traj_solver(Control::JRK);
     traj_solver.setPath(path);
     traj_solver.setV(1);  // set velocity for time allocation
     opencv_drawing.drawTraj(traj_solver.solve(), blue, 2);

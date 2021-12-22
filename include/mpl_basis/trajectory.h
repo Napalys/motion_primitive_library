@@ -16,7 +16,7 @@
  * the dimension \f$n\f$ can be either 2 or 3. Yaw and yaw_dot are also
  * contained.
  */
-namespace NPL {
+namespace MPL {
     template<int Dim>
     struct Command {
         Vecf <Dim> pos;      ///< position in \f$R^{Dim}\f$
